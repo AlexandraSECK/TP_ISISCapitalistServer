@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<world
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='../java/com/isis/adventureISISServer/classes/worldSchema.xsd'>
+    <name>Barbapapa</name>
+    <logo></logo>
+    <money></money>
+    <score></score>
+    <totalangels></totalangels>
+    <activeangels></activeangels>
+    <angelbonus></angelbonus>
+    <lastupdate></lastupdate>
+    <products>
+        <product>
+            <id>1</id>
+            <name>Barbapapa</name>
+            <logo></logo>
+            <cout>1</cout>
+            <croissance>1.07</croissance>
+            <revenu>1</revenu>
+            <vitesse>1000</vitesse>
+            <quantite>0</quantite>
+            <timeleft>1000</timeleft>
+            <managerUnlocked>0</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Unlock 1</name>
+                    <logo></logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>Faux</unlocked>
+                </pallier>
+                <pallier>
+                    <name>Unlock 2</name>
+                    <logo></logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>1.5</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+                <pallier>
+                    <name>Unlock 3</name>
+                    <logo></logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>2</id>
+            <name>Barbamama</name>
+            <logo></logo>
+            <cout>20</cout>
+            <croissance>1.08</croissance>
+            <revenu>20</revenu>
+            <vitesse>2000</vitesse>
+            <quantite>0</quantite>
+            <timeleft>2000</timeleft>
+            <managerUnlocked>0</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>Unlock 1</name>
+                    <logo></logo>
+                    <seuil>10</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>Faux</unlocked>
+                </pallier>
+                <pallier>
+                    <name>Unlock 2</name>
+                    <logo></logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>1.5</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+                <pallier>
+                    <name>Unlock 3</name>
+                    <logo></logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+    </products>
+    <allunlocks>
+    </allunlocks>
+    <upgrades>
+    </upgrades>
+    <angelupgrades>
+    </angelupgrades>
+    <managers>
+    </managers>
+
+</world>
