@@ -10,7 +10,7 @@ and open the template in the editor.
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='../java/com/isis/adventureISISServer/classes/worldSchema.xsd'>
     <name>Barbapapa</name>
-    <logo></logo>
+    <logo>D:\ISIS\4A\S8\SOA\logo\barbapapa.gif</logo>
     <money></money>
     <score></score>
     <totalangels></totalangels>
@@ -22,7 +22,7 @@ and open the template in the editor.
             <id>1</id>
             <name>Barbapapa</name>
             <logo></logo>
-            <cout>1</cout>
+            <cout>0</cout>
             <croissance>1.07</croissance>
             <revenu>1</revenu>
             <vitesse>1000</vitesse>
@@ -104,10 +104,142 @@ and open the template in the editor.
     <allunlocks>
     </allunlocks>
     <upgrades>
+        <pallier>
+            <name>upgrade 1</name>
+            <logo></logo>
+            <seuil>5000</seuil>
+            <idcible>1</idcible>
+            <ratio>1.5</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 2</name>
+            <logo></logo>
+            <seuil>10000</seuil>
+            <idcible>0</idcible>
+            <ratio>1.5</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 3</name>
+            <logo></logo>
+            <seuil>25000</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 4</name>
+            <logo></logo>
+            <seuil>50000</seuil>
+            <idcible>2</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESS</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 5</name>
+            <logo></logo>
+            <seuil>150000</seuil>
+            <idcible>2</idcible>
+            <ratio>1.5</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 6</name>
+            <logo></logo>
+            <seuil>250000</seuil>
+            <idcible>1</idcible>
+            <ratio>1.5</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 7</name>
+            <logo></logo>
+            <seuil>1000000</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 8</name>
+            <logo></logo>
+            <seuil>2500000</seuil>
+            <idcible>-1</idcible>
+            <ratio>0.5</ratio>
+            <typeratio>ANGE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 9</name>
+            <logo></logo>
+            <seuil>100000000</seuil>
+            <idcible>0</idcible>
+            <ratio>1.25</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>upgrade 10</name>
+            <logo></logo>
+            <seuil>5000000000</seuil>
+            <idcible>2</idcible>
+            <ratio>1.2</ratio>
+            <typeratio>VITESSE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
     </upgrades>
-    <angelupgrades>
+    <angelupgrades><pallier>
+                    <name>AngelUpgrade 1</name>
+                    <logo></logo>
+                    <seuil>10000</seuil>
+                    <idcible>0</idcible>
+                    <ratio>3</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>Faux</unlocked>
+                </pallier>
+                <pallier>
+                    <name>AngelUpgrade 2</name>
+                    <logo></logo>
+                    <seuil>100000</seuil>
+                    <idcible>-1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>ANGE</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+                <pallier>
+                    <name>AngelUpgrade 3</name>
+                    <logo></logo>
+                    <seuil>100000000</seuil>
+                    <idcible>-1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>ANGE</typeratio>
+                    <unlocked>FAUX</unlocked>
+                </pallier>
+
     </angelupgrades>
     <managers>
+        <pallier>
+            <name>Manager papa</name>
+            <logo></logo>
+            <seuil>400</seuil>
+            <idcible>1</idcible>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>Manager mama</name>
+            <logo>800</logo>
+                    <seuil></seuil>
+                    <idcible>1</idcible>
+                    <unlocked>FAUX</unlocked>
+        </pallier>
+        
     </managers>
 
 </world>

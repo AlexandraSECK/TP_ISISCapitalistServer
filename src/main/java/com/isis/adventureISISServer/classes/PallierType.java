@@ -1,12 +1,13 @@
 //
-// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
+// Ce fichier a ï¿½tï¿½ gï¿½nï¿½rï¿½ par l'implï¿½mentation de rï¿½fï¿½rence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.27 à 09:36:53 AM CET 
+// Toute modification apportï¿½e ï¿½ ce fichier sera perdue lors de la recompilation du schï¿½ma source. 
+// Gï¿½nï¿½rï¿½ le : 2020.02.27 ï¿½ 09:36:53 AM CET 
 //
 
 
-package generated;
+package com.isis.adventureISISServer.classes;
+
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour pallierType complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schï¿½ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="pallierType">
@@ -65,7 +66,7 @@ public class PallierType {
     protected boolean unlocked;
 
     /**
-     * Obtient la valeur de la propriété name.
+     * Obtient la valeur de la propriï¿½tï¿½ name.
      * 
      * @return
      *     possible object is
@@ -77,7 +78,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété name.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ name.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +90,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété logo.
+     * Obtient la valeur de la propriï¿½tï¿½ logo.
      * 
      * @return
      *     possible object is
@@ -101,7 +102,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété logo.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ logo.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +114,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété seuil.
+     * Obtient la valeur de la propriï¿½tï¿½ seuil.
      * 
      */
     public int getSeuil() {
@@ -121,7 +122,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété seuil.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ seuil.
      * 
      */
     public void setSeuil(int value) {
@@ -129,7 +130,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété idcible.
+     * Obtient la valeur de la propriï¿½tï¿½ idcible.
      * 
      */
     public int getIdcible() {
@@ -137,7 +138,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété idcible.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ idcible.
      * 
      */
     public void setIdcible(int value) {
@@ -145,7 +146,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété ratio.
+     * Obtient la valeur de la propriï¿½tï¿½ ratio.
      * 
      */
     public double getRatio() {
@@ -153,7 +154,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété ratio.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ ratio.
      * 
      */
     public void setRatio(double value) {
@@ -161,7 +162,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété typeratio.
+     * Obtient la valeur de la propriï¿½tï¿½ typeratio.
      * 
      * @return
      *     possible object is
@@ -173,7 +174,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété typeratio.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ typeratio.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +186,7 @@ public class PallierType {
     }
 
     /**
-     * Obtient la valeur de la propriété unlocked.
+     * Obtient la valeur de la propriï¿½tï¿½ unlocked.
      * 
      */
     public boolean isUnlocked() {
@@ -193,7 +194,7 @@ public class PallierType {
     }
 
     /**
-     * Définit la valeur de la propriété unlocked.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ unlocked.
      * 
      */
     public void setUnlocked(boolean value) {

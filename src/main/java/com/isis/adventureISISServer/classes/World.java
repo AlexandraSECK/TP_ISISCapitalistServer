@@ -1,12 +1,13 @@
 //
-// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
+// Ce fichier a ï¿½tï¿½ gï¿½nï¿½rï¿½ par l'implï¿½mentation de rï¿½fï¿½rence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2020.02.27 à 09:36:53 AM CET 
+// Toute modification apportï¿½e ï¿½ ce fichier sera perdue lors de la recompilation du schï¿½ma source. 
+// Gï¿½nï¿½rï¿½ le : 2020.02.27 ï¿½ 09:36:53 AM CET 
 //
 
 
-package generated;
+package com.isis.adventureISISServer.classes;
+
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour anonymous complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schï¿½ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType>
@@ -87,7 +88,7 @@ public class World {
     protected PalliersType managers;
 
     /**
-     * Obtient la valeur de la propriété name.
+     * Obtient la valeur de la propriï¿½tï¿½ name.
      * 
      * @return
      *     possible object is
@@ -99,7 +100,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété name.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ name.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +112,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété logo.
+     * Obtient la valeur de la propriï¿½tï¿½ logo.
      * 
      * @return
      *     possible object is
@@ -123,7 +124,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété logo.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ logo.
      * 
      * @param value
      *     allowed object is
@@ -135,7 +136,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété money.
+     * Obtient la valeur de la propriï¿½tï¿½ money.
      * 
      */
     public double getMoney() {
@@ -143,7 +144,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété money.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ money.
      * 
      */
     public void setMoney(double value) {
@@ -151,7 +152,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété score.
+     * Obtient la valeur de la propriï¿½tï¿½ score.
      * 
      */
     public double getScore() {
@@ -159,7 +160,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété score.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ score.
      * 
      */
     public void setScore(double value) {
@@ -167,7 +168,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété totalangels.
+     * Obtient la valeur de la propriï¿½tï¿½ totalangels.
      * 
      */
     public double getTotalangels() {
@@ -175,7 +176,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété totalangels.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ totalangels.
      * 
      */
     public void setTotalangels(double value) {
@@ -183,7 +184,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété activeangels.
+     * Obtient la valeur de la propriï¿½tï¿½ activeangels.
      * 
      */
     public double getActiveangels() {
@@ -191,7 +192,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété activeangels.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ activeangels.
      * 
      */
     public void setActiveangels(double value) {
@@ -199,7 +200,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété angelbonus.
+     * Obtient la valeur de la propriï¿½tï¿½ angelbonus.
      * 
      */
     public int getAngelbonus() {
@@ -207,7 +208,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété angelbonus.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ angelbonus.
      * 
      */
     public void setAngelbonus(int value) {
@@ -215,7 +216,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété lastupdate.
+     * Obtient la valeur de la propriï¿½tï¿½ lastupdate.
      * 
      */
     public long getLastupdate() {
@@ -223,7 +224,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété lastupdate.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ lastupdate.
      * 
      */
     public void setLastupdate(long value) {
@@ -231,7 +232,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété products.
+     * Obtient la valeur de la propriï¿½tï¿½ products.
      * 
      * @return
      *     possible object is
@@ -243,7 +244,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété products.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ products.
      * 
      * @param value
      *     allowed object is
@@ -255,7 +256,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété allunlocks.
+     * Obtient la valeur de la propriï¿½tï¿½ allunlocks.
      * 
      * @return
      *     possible object is
@@ -267,7 +268,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété allunlocks.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ allunlocks.
      * 
      * @param value
      *     allowed object is
@@ -279,7 +280,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété upgrades.
+     * Obtient la valeur de la propriï¿½tï¿½ upgrades.
      * 
      * @return
      *     possible object is
@@ -291,7 +292,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété upgrades.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ upgrades.
      * 
      * @param value
      *     allowed object is
@@ -303,7 +304,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété angelupgrades.
+     * Obtient la valeur de la propriï¿½tï¿½ angelupgrades.
      * 
      * @return
      *     possible object is
@@ -315,7 +316,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété angelupgrades.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ angelupgrades.
      * 
      * @param value
      *     allowed object is
@@ -327,7 +328,7 @@ public class World {
     }
 
     /**
-     * Obtient la valeur de la propriété managers.
+     * Obtient la valeur de la propriï¿½tï¿½ managers.
      * 
      * @return
      *     possible object is
@@ -339,7 +340,7 @@ public class World {
     }
 
     /**
-     * Définit la valeur de la propriété managers.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ managers.
      * 
      * @param value
      *     allowed object is
