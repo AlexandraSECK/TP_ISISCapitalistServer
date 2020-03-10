@@ -272,5 +272,7 @@ public class ProductType {
     public void setPalliers(PalliersType value) {
         this.palliers = value;
     }
+    
+    
 
 }
