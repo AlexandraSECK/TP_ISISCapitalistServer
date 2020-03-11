@@ -5,8 +5,11 @@
  */
 package com.isis.adventureISISServer.classes;
 
+import java.io.FileNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
+import static javax.ws.rs.HttpMethod.PUT;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
@@ -40,6 +43,14 @@ public class Webservice {
    public Response getXml(@Context HttpServletRequest request) throws JAXBException {
         String username = request.getHeader("X-user");
         return Response.ok(services.getWorld(username)).build();
+   }
+   
+    @PUT
+    @Path("product")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
+   public void putProduct (@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException {
+        String username = request.getHeader("X-user");
+        services.updateProduct(username,product);
    }
 }
    
