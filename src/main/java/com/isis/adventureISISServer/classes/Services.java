@@ -56,27 +56,28 @@ public class Services {
 // trouver dans ce monde, le produit équivalent à celui passé
 // en paramètre
         ProductType product = findProductById(world, newproduct.getId());
-        if (product == null) 
-        {return false;}
+        if (product == null) {
+            return false;
+        }
 // calculer la variation de quantité. Si elle est positive c'est
 // que le joueur a acheté une certaine quantité de ce produit
 // sinon c’est qu’il s’agit d’un lancement de production.
 
         int qtchange = newproduct.getQuantite() - product.getQuantite();
         if (qtchange > 0) {
-            double prix1 =product.cout;
-            double q=product.getCroissance();
-            double newprix=prix1*(1-(Math.pow(q,qtchange))/(1-q));
-            double argent=world.getMoney()-newprix;
+            double prix1 = product.cout;
+            double q = product.getCroissance();
+            double newprix = prix1 * (1 - (Math.pow(q, qtchange)) / (1 - q));
+            double argent = world.getMoney() - newprix;
             world.setMoney(argent);
             product.setQuantite(newproduct.getQuantite());
 // soustraire del'argent du joueur le cout de la quantité
 // achetée et mettre à jour la quantité de product 
         } else {
-            
+
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
-        product.timeleft=product.vitesse;
+            product.timeleft = product.vitesse;
         }
 // sauvegarder les changements du monde
         saveWorldToXml(world, username);
@@ -94,6 +95,41 @@ public class Services {
             }
         }
         return produit;
+    }
+
+    // prend en paramètre le pseudo du joueur et le manager acheté.
+// renvoie false si l’action n’a pas pu être traitée
+    public Boolean updateManager(String username, PallierType newmanager) throws JAXBException, FileNotFoundException {
+// aller chercher le monde qui correspond au joueur*
+        World world = getWorld(username);
+        // trouver dans ce monde, le manager équivalent à celui passé
+// en paramètre
+        PallierType manager = findManagerByName(world, newmanager.getName());
+        if (manager == null) {
+            return false;
+        }
+// débloquer le manager de ce produit
+// soustraire de l'argent du joueur le cout du manager
+// sauvegarder les changements au monde
+        manager.setUnlocked(true);
+        double argent=world.getMoney()-manager.getSeuil();
+        saveWorldToXml(world,username);
+        return true;
+    }
+    
+    
+    
+    private PallierType findManagerByName(World world, String name) {
+         PallierType manager = null;
+        List<PallierType> p = world.getManagers().getPallier();
+        for (PallierType pa : p) {
+            String mName = pa.getName();
+            if (name.equals(mName)) {
+                manager = pa;
+                return manager;
+            }
+        }
+        return manager;
     }
 
 }
