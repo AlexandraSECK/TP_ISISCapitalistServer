@@ -40,7 +40,7 @@ public class Webservice {
     @GET
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
-   public Response getXml(@Context HttpServletRequest request) throws JAXBException {
+   public Response getXml(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
         return Response.ok(services.getWorld(username)).build();
    }
@@ -51,6 +51,14 @@ public class Webservice {
    public void putProduct (@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
         services.updateProduct(username,product);
+   }
+   
+    @PUT
+    @Path("manager")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
+   public void putManager (@Context HttpServletRequest request, PallierType manager) throws JAXBException, FileNotFoundException {
+        String username = request.getHeader("X-user");
+        services.updateManager(username,manager);
    }
 }
    

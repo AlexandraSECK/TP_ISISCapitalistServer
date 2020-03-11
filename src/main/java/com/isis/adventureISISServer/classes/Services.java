@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -22,8 +23,18 @@ import javax.xml.bind.Unmarshaller;
  */
 public class Services {
 
-    public World getWorld(String username) throws JAXBException {
+    public World getWorld(String username) throws JAXBException, FileNotFoundException {
         World world = readWorldFromXml(username);
+        long d1 = System.currentTimeMillis();
+        long d2 = world.getLastupdate();
+
+        if (d1 == d2) {
+            return world;
+        }
+        majWorld(world);
+        world.setLastupdate(System.currentTimeMillis());
+
+        saveWorldToXml(world, username);
         return world;
     }
 
@@ -108,19 +119,25 @@ public class Services {
         if (manager == null) {
             return false;
         }
+        manager.setUnlocked(true);
+
+        ProductType product = findProductById(world, manager.getIdcible());
+        if (product == null) {
+            return false;
+        }
 // débloquer le manager de ce produit
 // soustraire de l'argent du joueur le cout du manager
 // sauvegarder les changements au monde
-        manager.setUnlocked(true);
-        double argent=world.getMoney()-manager.getSeuil();
-        saveWorldToXml(world,username);
+        product.setManagerUnlocked(true);
+        double argent = world.getMoney() - manager.getSeuil();
+        saveWorldToXml(world, username);
+        world.setMoney(argent);
+
         return true;
     }
-    
-    
-    
+
     private PallierType findManagerByName(World world, String name) {
-         PallierType manager = null;
+        PallierType manager = null;
         List<PallierType> p = world.getManagers().getPallier();
         for (PallierType pa : p) {
             String mName = pa.getName();
@@ -130,6 +147,34 @@ public class Services {
             }
         }
         return manager;
+    }
+
+    public void majWorld(World world) {
+        List<ProductType> ListProduit = world.getProducts().getProduct();
+        long d1 = System.currentTimeMillis();
+        long d2 = world.getLastupdate();
+        long delta = d2 - d1;
+
+        for (ProductType pr : ListProduit) {
+            if (pr.isManagerUnlocked()) {
+                int tempsProduit = pr.getVitesse();
+                int nbrProduit = (int) (delta / tempsProduit);
+                long tpsRestant = nbrProduit - (delta % tempsProduit);
+                pr.setTimeleft(tpsRestant);
+                double argentGagne = pr.getRevenu() * nbrProduit;
+                world.setMoney(world.getMoney() + argentGagne);
+                world.setScore(world.getScore() + argentGagne);
+            } else {
+                if (pr.getTimeleft() != 0 && delta > pr.getTimeleft()) {
+                    world.setMoney(world.getMoney() + pr.getRevenu());
+                    world.setScore(world.getScore() + pr.getRevenu());
+                } else {
+                    pr.setTimeleft(pr.getTimeleft() - delta);
+                }
+            }
+
+        }
+
     }
 
 }
