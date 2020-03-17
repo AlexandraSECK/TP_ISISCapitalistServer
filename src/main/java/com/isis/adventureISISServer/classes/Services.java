@@ -90,6 +90,12 @@ public class Services {
 // pour lancer la production
             product.timeleft = product.vitesse;
         }
+        List<PallierType> listeUnlock = product.getPalliers().getPallier();
+        for (PallierType p : listeUnlock) {
+            if (!p.isUnlocked() && product.getQuantite() >= p.getSeuil()) {
+                majPallier(p, product);
+            }
+        }
 // sauvegarder les changements du monde
         saveWorldToXml(world, username);
         return true;
@@ -136,6 +142,24 @@ public class Services {
         return true;
     }
 
+    public Boolean updateUpgrade(String username, PallierType upgrade) throws JAXBException, FileNotFoundException {
+        World world = getWorld(username);
+        if (world.getMoney() >= upgrade.getSeuil() && !upgrade.isUnlocked()) {
+            if (upgrade.getIdcible() == 0) {
+                List<ProductType> listeProduits = world.getProducts().getProduct();
+                for (ProductType p : listeProduits) {
+                    majPallier(upgrade, p);
+                }
+                return true;
+            } else {
+                ProductType p = findProductById(world, upgrade.getIdcible());
+                majPallier(upgrade, p);
+                return true;
+            }
+        }
+        return false;
+    }
+
     private PallierType findManagerByName(World world, String name) {
         PallierType manager = null;
         List<PallierType> p = world.getManagers().getPallier();
@@ -177,4 +201,30 @@ public class Services {
 
     }
 
+    public void majPallier(PallierType p, ProductType product) {
+        p.setUnlocked(true);
+        if (p.getTyperatio() == TyperatioType.VITESSE) {
+            double v = product.getVitesse();
+            int newv = (int) (v * p.getRatio());
+            product.setVitesse(newv);
+
+        } else {
+            if (p.getTyperatio() == TyperatioType.GAIN) {
+                double r = product.getRevenu();
+                r = r * p.getRatio();
+                product.setRevenu(r);
+            }
+        }
+    }
+    
+  /*  public World deleteWorld(){
+        
+    }
+    
+    public int nbAnges(World world){
+        double totalAngel=world.getTotalangels();
+        double score=world.getScore();
+        totalAngel+=150*Math.sqrt(score/Math.pow(10,15))-totalAngel;
+        
+    }*/
 }

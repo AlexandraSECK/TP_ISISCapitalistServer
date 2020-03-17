@@ -137,7 +137,7 @@ and open the template in the editor.
             <seuil>50000</seuil>
             <idcible>2</idcible>
             <ratio>2</ratio>
-            <typeratio>VITESS</typeratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked>FAUX</unlocked>
         </pallier>
         <pallier>
@@ -171,9 +171,9 @@ and open the template in the editor.
             <name>upgrade 8</name>
             <logo>barbotine.gif</logo>
             <seuil>2500000</seuil>
-            <idcible>-1</idcible>
+            <idcible>0</idcible>
             <ratio>0.5</ratio>
-            <typeratio>ANGE</typeratio>
+            <typeratio>VITESSE</typeratio>
             <unlocked>FAUX</unlocked>
         </pallier>
         <pallier>

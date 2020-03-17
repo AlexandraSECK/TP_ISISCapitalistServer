@@ -8,6 +8,9 @@ package com.isis.adventureISISServer.classes;
 import java.io.FileNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
+import javax.ws.rs.DELETE;
+
+import static javax.ws.rs.HttpMethod.DELETE;
 import static javax.ws.rs.HttpMethod.PUT;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -30,36 +33,49 @@ public class Webservice {
         services = new Services();
     }
 
-   /* @GET
+    /* @GET
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getWorld() throws JAXBException {
         return Response.ok(services.readWorldFromXml()).build();
     }*/
-
     @GET
     @Path("world")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
-   public Response getXml(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response getXml(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
         return Response.ok(services.getWorld(username)).build();
-   }
-   
+    }
+
     @PUT
     @Path("product")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
-   public void putProduct (@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException {
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putProduct(@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
-        services.updateProduct(username,product);
-   }
-   
+        services.updateProduct(username, product);
+    }
+
     @PUT
     @Path("manager")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON}) 
-   public void putManager (@Context HttpServletRequest request, PallierType manager) throws JAXBException, FileNotFoundException {
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putManager(@Context HttpServletRequest request, PallierType manager) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
-        services.updateManager(username,manager);
-   }
-}
-   
+        services.updateManager(username, manager);
+    }
+    
+    @PUT
+    @Path("upgrade")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putUpgrade (@Context HttpServletRequest request, PallierType upgrade) throws JAXBException, FileNotFoundException {
+        String username = request.getHeader("X-user");
+        services.updateUpgrade(username, upgrade);
+        }
+    
+    @DELETE
+    @Path("world")
+     public void deleteWorld (@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
+                 String username = request.getHeader("X-user");
 
+    
+    }
+}
