@@ -178,14 +178,15 @@ public class Services {
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
         long delta = d2 - d1;
-
+        double angesActifs = world.getActiveangels();
+        double angelBonus = world.getAngelbonus();
         for (ProductType pr : ListProduit) {
             if (pr.isManagerUnlocked()) {
                 int tempsProduit = pr.getVitesse();
                 int nbrProduit = (int) (delta / tempsProduit);
                 long tpsRestant = nbrProduit - (delta % tempsProduit);
                 pr.setTimeleft(tpsRestant);
-                double argentGagne = pr.getRevenu() * nbrProduit;
+                double argentGagne = (pr.getRevenu() * nbrProduit) * (1 + angesActifs * angelBonus / 100);
                 world.setMoney(world.getMoney() + argentGagne);
                 world.setScore(world.getScore() + argentGagne);
             } else {
@@ -216,15 +217,48 @@ public class Services {
             }
         }
     }
-    
-  /*  public World deleteWorld(){
-        
+
+    public World deleteWorld(String username) throws JAXBException, FileNotFoundException {
+        World world = getWorld(username);
+        double activesAngels = world.getActiveangels();
+        double totalAngels = world.getTotalangels();
+        double angesGagnes = nbAnges(world);
+        double Score = world.getScore();
+        activesAngels += angesGagnes;
+        totalAngels += angesGagnes;
+
+        InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
+
+        JAXBContext cont = JAXBContext.newInstance(World.class);
+        Unmarshaller u = cont.createUnmarshaller();
+        World NewWorld = (World) u.unmarshal(input);
+        NewWorld.setTotalangels(totalAngels);
+        NewWorld.setActiveangels(angesGagnes);
+        NewWorld.setScore(Score);
+        saveWorldToXml(NewWorld, username);
+        return NewWorld;
     }
-    
-    public int nbAnges(World world){
-        double totalAngel=world.getTotalangels();
-        double score=world.getScore();
-        totalAngel+=150*Math.sqrt(score/Math.pow(10,15))-totalAngel;
-        
-    }*/
+
+    public double nbAnges(World world) {
+        double angelToClaim = world.getTotalangels();
+        double score = world.getScore();
+        angelToClaim = Math.round(150 * Math.sqrt(score / Math.pow(10, 15))) - angelToClaim;
+        return angelToClaim;
+    }
+
+    public void angelUpgrade(String username, PallierType angelUpgrade) throws JAXBException, FileNotFoundException {
+        World world = getWorld(username);
+        double prix = angelUpgrade.getSeuil();
+        double angesActif = world.getActiveangels();
+        angesActif -= prix;
+        if (angelUpgrade.getTyperatio() == TyperatioType.ANGE) {
+            int bonus = world.getAngelbonus();
+            bonus += angelUpgrade.getRatio();
+            world.setAngelbonus(bonus);
+        } else {
+            updateUpgrade(username, angelUpgrade);
+        }
+        world.setActiveangels(angesActif);
+
+    }
 }
