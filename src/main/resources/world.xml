@@ -10,7 +10,7 @@ and open the template in the editor.
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='../java/com/isis/adventureISISServer/classes/worldSchema.xsd'>
     <name>Barbapapa</name>
-    <logo>D:\ISIS\4A\S8\SOA\logo\barbapapa.gif</logo>
+    <logo>barbafamille.jpg</logo>
     <money></money>
     <score></score>
     <totalangels></totalangels>
@@ -21,41 +21,59 @@ and open the template in the editor.
         <product>
             <id>1</id>
             <name>Barbapapa</name>
-            <logo>babapapa.gif</logo>
-            <cout>0</cout>
+            <logo>barbapapa.gif</logo>
+            <cout>4</cout>
             <croissance>1.07</croissance>
             <revenu>1</revenu>
-            <vitesse>1000</vitesse>
-            <quantite>0</quantite>
-            <timeleft>1000</timeleft>
-            <managerUnlocked>0</managerUnlocked>
+            <vitesse>500</vitesse>
+            <quantite>1</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>Unlock 1</name>
-                    <logo>barbapap.gif</logo>
-                    <seuil>10</seuil>
-                    <idcible>1</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>GAIN</typeratio>
-                    <unlocked>Faux</unlocked>
-                </pallier>
-                <pallier>
-                    <name>Unlock 2</name>
+                    <name>PapaUnlock 1</name>
                     <logo>barbapapa.gif</logo>
                     <seuil>25</seuil>
                     <idcible>1</idcible>
-                    <ratio>1.5</ratio>
+                    <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
-                    <unlocked>FAUX</unlocked>
+                    <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>Unlock 3</name>
+                    <name>PapaUnlock 2</name>
                     <logo>barbapapa.gif</logo>
                     <seuil>50</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 3</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 4</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 5</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>300</seuil>
+                    <idcible>1</idcible>
+                    <ratio>4</ratio>
                     <typeratio>GAIN</typeratio>
-                    <unlocked>FAUX</unlocked>
+                    <unlocked>false</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -63,40 +81,294 @@ and open the template in the editor.
             <id>2</id>
             <name>Barbamama</name>
             <logo>barbamama.gif</logo>
-            <cout>20</cout>
-            <croissance>1.08</croissance>
-            <revenu>20</revenu>
-            <vitesse>2000</vitesse>
+            <cout>60</cout>
+            <croissance>1.15</croissance>
+            <revenu>60</revenu>
+            <vitesse>3000</vitesse>
             <quantite>0</quantite>
-            <timeleft>2000</timeleft>
-            <managerUnlocked>0</managerUnlocked>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>Unlock 1</name>
-                    <logo>barbamama.gif</logo>
-                    <seuil>10</seuil>
-                    <idcible>2</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>GAIN</typeratio>
-                    <unlocked>Faux</unlocked>
-                </pallier>
-                <pallier>
-                    <name>Unlock 2</name>
+                    <name>MamaUnlock 1</name>
                     <logo>barbamama.gif</logo>
                     <seuil>25</seuil>
                     <idcible>2</idcible>
-                    <ratio>1.5</ratio>
+                    <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
-                    <unlocked>FAUX</unlocked>
+                    <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>Unlock 3</name>
+                    <name>MamaUnlock 2</name>
                     <logo>barbamama.gif</logo>
                     <seuil>50</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>MamaUnlock 3</name>
+                    <logo>barbamama.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>MamaUnlock 4</name>
+                    <logo>barbamama.gif</logo>
+                    <seuil>125</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
                     <typeratio>GAIN</typeratio>
-                    <unlocked>FAUX</unlocked>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>MamaUnlock 5</name>
+                    <logo>barbamama.gif</logo>
+                    <seuil>150</seuil>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>1</id>
+            <name>Barbabelle</name>
+            <logo>barbabelle.gif</logo>
+            <cout>720</cout>
+            <croissance>1.14</croissance>
+            <revenu>540</revenu>
+            <vitesse>6000</vitesse>
+            <quantite>0</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>BelleUnlock 1</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 2</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 3</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 4</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 5</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>300</seuil>
+                    <idcible>1</idcible>
+                    <ratio>4</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>1</id>
+            <name>Barbapapa</name>
+            <logo>barbapapa.gif</logo>
+            <cout>4</cout>
+            <croissance>1.07</croissance>
+            <revenu>1</revenu>
+            <vitesse>500</vitesse>
+            <quantite>1</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>PapaUnlock 1</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 2</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 3</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 4</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 5</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>300</seuil>
+                    <idcible>1</idcible>
+                    <ratio>4</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>1</id>
+            <name>Barbapapa</name>
+            <logo>barbapapa.gif</logo>
+            <cout>4</cout>
+            <croissance>1.07</croissance>
+            <revenu>1</revenu>
+            <vitesse>500</vitesse>
+            <quantite>1</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>PapaUnlock 1</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 2</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 3</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 4</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 5</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>300</seuil>
+                    <idcible>1</idcible>
+                    <ratio>4</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>1</id>
+            <name>Barbapapa</name>
+            <logo>barbapapa.gif</logo>
+            <cout>4</cout>
+            <croissance>1.07</croissance>
+            <revenu>1</revenu>
+            <vitesse>500</vitesse>
+            <quantite>1</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>PapaUnlock 1</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>25</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 2</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 3</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>100</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 4</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>VITESSE</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>PapaUnlock 5</name>
+                    <logo>barbapapa.gif</logo>
+                    <seuil>300</seuil>
+                    <idcible>1</idcible>
+                    <ratio>4</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
                 </pallier>
             </palliers>
         </product>
