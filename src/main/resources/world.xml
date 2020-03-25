@@ -150,46 +150,46 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>BelleUnlock 1</name>
-                    <logo>barbapapa.gif</logo>
+                    <logo>barbabelle.gif</logo>
                     <seuil>25</seuil>
-                    <idcible>1</idcible>
+                    <idcible>3</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 2</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>BelleUnlock 2</name>
+                    <logo>barbabelle.gif</logo>
                     <seuil>50</seuil>
-                    <idcible>1</idcible>
+                    <idcible>3</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 3</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>BelleUnlock 3</name>
+                    <logo>barbabelle.gif</logo>
                     <seuil>100</seuil>
-                    <idcible>1</idcible>
+                    <idcible>3</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 4</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>BelleUnlock 4</name>
+                    <logo>barbabelle.gif</logo>
                     <seuil>200</seuil>
-                    <idcible>1</idcible>
+                    <idcible>3</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 5</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>BelleUnlock 5</name>
+                    <logo>barbabelle.gif</logo>
                     <seuil>300</seuil>
-                    <idcible>1</idcible>
-                    <ratio>4</ratio>
+                    <idcible>3</idcible>
+                    <ratio>2</ratio>
                     <typeratio>GAIN</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
@@ -197,58 +197,58 @@ and open the template in the editor.
         </product>
         <product>
             <id>1</id>
-            <name>Barbapapa</name>
-            <logo>barbapapa.gif</logo>
-            <cout>4</cout>
-            <croissance>1.07</croissance>
-            <revenu>1</revenu>
-            <vitesse>500</vitesse>
-            <quantite>1</quantite>
+            <name>Barbalala</name>
+            <logo>barbalala.gif</logo>
+            <cout>8640</cout>
+            <croissance>1.13</croissance>
+            <revenu>4320</revenu>
+            <vitesse>12000</vitesse>
+            <quantite>0</quantite>
             <timeleft>0</timeleft>
             <managerUnlocked>false</managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>PapaUnlock 1</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>LalaUnlock 1</name>
+                    <logo>barbalala.gif</logo>
                     <seuil>25</seuil>
-                    <idcible>1</idcible>
+                    <idcible>4</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 2</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>LalaUnlock 2</name>
+                    <logo>barbalala.gif</logo>
                     <seuil>50</seuil>
-                    <idcible>1</idcible>
+                    <idcible>4</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 3</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>LalaUnlock 3</name>
+                    <logo>barbalala.gif</logo>
                     <seuil>100</seuil>
-                    <idcible>1</idcible>
+                    <idcible>4</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 4</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>LalaUnlock 4</name>
+                    <logo>barbalala.gif</logo>
                     <seuil>200</seuil>
-                    <idcible>1</idcible>
+                    <idcible>4</idcible>
                     <ratio>2</ratio>
                     <typeratio>VITESSE</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
-                    <name>PapaUnlock 5</name>
-                    <logo>barbapapa.gif</logo>
+                    <name>LalaUnlock 5</name>
+                    <logo>barbalala.gif</logo>
                     <seuil>300</seuil>
-                    <idcible>1</idcible>
-                    <ratio>4</ratio>
+                    <idcible>4</idcible>
+                    <ratio>2</ratio>
                     <typeratio>GAIN</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
@@ -467,33 +467,34 @@ and open the template in the editor.
             <unlocked>FAUX</unlocked>
         </pallier>
     </upgrades>
-    <angelupgrades><pallier>
-                    <name>AngelUpgrade 1</name>
-                    <logo>barbotine.gif</logo>
-                    <seuil>10000</seuil>
-                    <idcible>0</idcible>
-                    <ratio>3</ratio>
-                    <typeratio>GAIN</typeratio>
-                    <unlocked>Faux</unlocked>
-                </pallier>
-                <pallier>
-                    <name>AngelUpgrade 2</name>
-                    <logo>barbotine.gif</logo>
-                    <seuil>100000</seuil>
-                    <idcible>-1</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>ANGE</typeratio>
-                    <unlocked>FAUX</unlocked>
-                </pallier>
-                <pallier>
-                    <name>AngelUpgrade 3</name>
-                    <logo>barbotine.gif</logo>
-                    <seuil>100000000</seuil>
-                    <idcible>-1</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>ANGE</typeratio>
-                    <unlocked>FAUX</unlocked>
-                </pallier>
+    <angelupgrades>
+        <pallier>
+            <name>AngelUpgrade 1</name>
+            <logo>barbotine.gif</logo>
+            <seuil>10000</seuil>
+            <idcible>0</idcible>
+            <ratio>3</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>Faux</unlocked>
+        </pallier>
+        <pallier>
+            <name>AngelUpgrade 2</name>
+            <logo>barbotine.gif</logo>
+            <seuil>100000</seuil>
+            <idcible>-1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ANGE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
+        <pallier>
+            <name>AngelUpgrade 3</name>
+            <logo>barbotine.gif</logo>
+            <seuil>100000000</seuil>
+            <idcible>-1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ANGE</typeratio>
+            <unlocked>FAUX</unlocked>
+        </pallier>
 
     </angelupgrades>
     <managers>
@@ -507,9 +508,9 @@ and open the template in the editor.
         <pallier>
             <name>Manager mama</name>
             <logo>barbamama.gif</logo>
-                    <seuil>800</seuil>
-                    <idcible>1</idcible>
-                    <unlocked>FAUX</unlocked>
+            <seuil>800</seuil>
+            <idcible>1</idcible>
+            <unlocked>FAUX</unlocked>
         </pallier>
         
     </managers>
