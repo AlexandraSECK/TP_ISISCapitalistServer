@@ -90,18 +90,23 @@ public class Services {
 
         int qtchange = newproduct.getQuantite() - product.getQuantite();
         if (qtchange > 0) {
+            int ancienneqte=product.getQuantite();
             double prix1 = product.cout;
             double q = product.getCroissance();
             double newprix = prix1 * (1 - (Math.pow(q, qtchange)) / (1 - q));
             double argent = world.getMoney() - newprix;
             world.setMoney(argent);
             product.setQuantite(newproduct.getQuantite());
+                        System.out.println(product.getName()+"Timeleft"+product.timeleft);
+            product.setCout(Math.pow(prix1*product.getCroissance(),qtchange));
+            double newRevenu=(product.getRevenu()/ancienneqte)*product.getQuantite();
 // soustraire del'argent du joueur le cout de la quantité
 // achetée et mettre à jour la quantité de product 
         } else {
 
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
+                        System.out.println(product.getName()+"Timeleft"+product.timeleft);
             product.timeleft = product.vitesse;
         }
         List<PallierType> listeUnlock = product.getPalliers().getPallier();
@@ -208,7 +213,9 @@ public class Services {
                 if (pr.getTimeleft() != 0 && delta > pr.getTimeleft()) {
                     world.setMoney(world.getMoney() + pr.getRevenu());
                     world.setScore(world.getScore() + pr.getRevenu());
+                    pr.setTimeleft(0);
                 } else {
+                    
                     pr.setTimeleft(pr.getTimeleft() - delta);
                 }
             }
