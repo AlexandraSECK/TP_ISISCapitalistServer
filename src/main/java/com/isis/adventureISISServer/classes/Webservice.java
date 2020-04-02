@@ -33,7 +33,7 @@ public class Webservice {
         services = new Services();
     }
 
-    /* @GET
+    /* @GET  
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getWorld() throws JAXBException {
@@ -47,13 +47,13 @@ public class Webservice {
         return Response.ok(services.getWorld(username)).build();
     }
     
-    @PUT
+   /* @PUT
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putProduct(@Context HttpServletRequest request, World world) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
         services.updateScore(username, world);
-    }
+    }*/
 
     @PUT
     @Path("product")

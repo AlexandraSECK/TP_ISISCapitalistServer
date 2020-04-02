@@ -22,8 +22,8 @@ import javax.xml.bind.Unmarshaller;
  * @author alexa
  */
 public class Services {
-    
-    public void updateScore(String username, World world) throws JAXBException, FileNotFoundException{
+
+    /* public void updateScore(String username, World world) throws JAXBException, FileNotFoundException{
         World oldWorld = readWorldFromXml(username);
         double money=world.getMoney();
         double score= world.getScore();
@@ -31,17 +31,15 @@ public class Services {
         oldWorld.setMoney(money);
         saveWorldToXml(oldWorld,username);
 
-    }
-
+    }*/
     public World getWorld(String username) throws JAXBException, FileNotFoundException {
         World world = readWorldFromXml(username);
+        ProductType product = findProductById(world, 1);
+
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
-        System.out.println(d2);
-
 
         if (d1 == d2) {
-                    System.out.println("ici");
 
             return world;
         }
@@ -63,7 +61,9 @@ public class Services {
         } catch (Exception e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
+            System.out.println("nouveau monde!");
         }
+
         return world;
     }
 
@@ -78,6 +78,7 @@ public class Services {
     public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException {
 // aller chercher le monde qui correspond au joueur
         World world = getWorld(username);
+        //majWorld(world);
 // trouver dans ce monde, le produit équivalent à celui passé
 // en paramètre
         ProductType product = findProductById(world, newproduct.getId());
@@ -90,25 +91,25 @@ public class Services {
 
         int qtchange = newproduct.getQuantite() - product.getQuantite();
         if (qtchange > 0) {
-            int ancienneqte=product.getQuantite();
+            int ancienneqte = product.getQuantite();
             double prix1 = product.cout;
             double q = product.getCroissance();
             double newprix = prix1 * (1 - (Math.pow(q, qtchange)) / (1 - q));
             double argent = world.getMoney() - newprix;
             world.setMoney(argent);
             product.setQuantite(newproduct.getQuantite());
-                        System.out.println(product.getName()+"Timeleft"+product.timeleft);
-            product.setCout(Math.pow(prix1*product.getCroissance(),qtchange));
-            double newRevenu=(product.getRevenu()/ancienneqte)*product.getQuantite();
-            product.setRevenu(newRevenu);
-// soustraire del'argent du joueur le cout de la quantité
-// achetée et mettre à jour la quantité de product 
+            product.setCout(Math.pow(product.getCroissance(), qtchange) * prix1);
+            if (ancienneqte != 0) {
+                double newRevenu = (product.getRevenu() / ancienneqte) * product.getQuantite();
+                product.setRevenu(newRevenu);
+            }
         } else {
-
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
-                        System.out.println(product.getName()+"Timeleft"+product.timeleft);
+            System.out.println(product.getName() + "Timeleft avant le lancement" + product.timeleft);
             product.timeleft = product.vitesse;
+                        System.out.println(product.getName() + "Timeleft après lancement" + product.timeleft);
+
         }
         List<PallierType> listeUnlock = product.getPalliers().getPallier();
         for (PallierType p : listeUnlock) {
@@ -117,6 +118,7 @@ public class Services {
             }
         }
 // sauvegarder les changements du monde
+        world.setLastupdate(System.currentTimeMillis());
         saveWorldToXml(world, username);
         return true;
     }
@@ -197,10 +199,11 @@ public class Services {
         List<ProductType> ListProduit = world.getProducts().getProduct();
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
-        long delta = d2 - d1;
+        long delta = d1- d2;
+        System.out.println("temps entre les deux : "+delta);
         double angesActifs = world.getActiveangels();
         double angelBonus = world.getAngelbonus();
-        System.out.println("ancien score :"+world.getScore());
+        //System.out.println("ancien score :" + world.getScore());
         for (ProductType pr : ListProduit) {
             if (pr.isManagerUnlocked()) {
                 int tempsProduit = pr.getVitesse();
@@ -215,16 +218,18 @@ public class Services {
                     world.setMoney(world.getMoney() + pr.getRevenu());
                     world.setScore(world.getScore() + pr.getRevenu());
                     pr.setTimeleft(0);
+                    System.out.println("nouveau produit");
                 } else {
-                    
-                    pr.setTimeleft(pr.getTimeleft() - delta);
+                    if (pr.getTimeleft() != 0) {
+                        long newTimeLeft = pr.getTimeleft() - delta;
+                        pr.setTimeleft(newTimeLeft);
+                    }
                 }
+
             }
+            //System.out.println("nouveau score :" + world.getScore());
 
         }
-        System.out.println("nouveau score :"+world.getScore());
-
-
     }
 
     public void majPallier(PallierType p, ProductType product) {
