@@ -22,13 +22,27 @@ import javax.xml.bind.Unmarshaller;
  * @author alexa
  */
 public class Services {
+    
+    public void updateScore(String username, World world) throws JAXBException, FileNotFoundException{
+        World oldWorld = readWorldFromXml(username);
+        double money=world.getMoney();
+        double score= world.getScore();
+        oldWorld.setScore(score);
+        oldWorld.setMoney(money);
+        saveWorldToXml(oldWorld,username);
+
+    }
 
     public World getWorld(String username) throws JAXBException, FileNotFoundException {
         World world = readWorldFromXml(username);
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
+        System.out.println(d2);
+
 
         if (d1 == d2) {
+                    System.out.println("ici");
+
             return world;
         }
         majWorld(world);
@@ -180,6 +194,7 @@ public class Services {
         long delta = d2 - d1;
         double angesActifs = world.getActiveangels();
         double angelBonus = world.getAngelbonus();
+        System.out.println("ancien score :"+world.getScore());
         for (ProductType pr : ListProduit) {
             if (pr.isManagerUnlocked()) {
                 int tempsProduit = pr.getVitesse();
@@ -199,6 +214,8 @@ public class Services {
             }
 
         }
+        System.out.println("nouveau score :"+world.getScore());
+
 
     }
 
