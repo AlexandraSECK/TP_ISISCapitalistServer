@@ -100,6 +100,7 @@ public class Services {
                         System.out.println(product.getName()+"Timeleft"+product.timeleft);
             product.setCout(Math.pow(prix1*product.getCroissance(),qtchange));
             double newRevenu=(product.getRevenu()/ancienneqte)*product.getQuantite();
+            product.setRevenu(newRevenu);
 // soustraire del'argent du joueur le cout de la quantité
 // achetée et mettre à jour la quantité de product 
         } else {
