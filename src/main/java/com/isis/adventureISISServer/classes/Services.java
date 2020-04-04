@@ -78,7 +78,7 @@ public class Services {
     public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException, Exception {
 // aller chercher le monde qui correspond au joueur
         World world = getWorld(username);
-                world.setLastupdate(System.currentTimeMillis());
+        world.setLastupdate(System.currentTimeMillis());
 
         //majWorld(world);
 // trouver dans ce monde, le produit équivalent à celui passé
@@ -94,13 +94,14 @@ public class Services {
         int qtchange = newproduct.getQuantite() - product.getQuantite();
         if (qtchange > 0) {
             int ancienneqte = product.getQuantite();
-            double prix1 = product.cout;
+            double ancienPrix = product.cout;
             double q = product.getCroissance();
-            double newprix = prix1 * (1 - (Math.pow(q, qtchange)) / (1 - q));
-            double argent = world.getMoney() - newprix;
+
+            double coutTotal = ancienPrix * (1 - (Math.pow(q, qtchange))) / (1 - q);
+            double argent = world.getMoney() - coutTotal;
             world.setMoney(argent);
             product.setQuantite(newproduct.getQuantite());
-            product.setCout(Math.pow(product.getCroissance(), qtchange) * prix1);
+            product.setCout(Math.pow(product.getCroissance(), qtchange) * ancienPrix);
             if (ancienneqte != 0) {
                 double newRevenu = (product.getRevenu() / ancienneqte) * product.getQuantite();
                 product.setRevenu(newRevenu);
@@ -109,15 +110,13 @@ public class Services {
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
             //En cas de décalage entre serveur et client
-            if(product.timeleft!=0) {
-                 world.setMoney(world.getMoney() + product.getRevenu());
-                    world.setScore(world.getScore() + product.getRevenu());
-                    product.setTimeleft(0);
+            if (product.timeleft != 0) {
+                world.setMoney(world.getMoney() + product.getRevenu());
+                world.setScore(world.getScore() + product.getRevenu());
+                product.setTimeleft(0);
             }
-  
-            System.out.println(product.getName() + "Timeleft avant le lancement" + product.timeleft);
+
             product.timeleft = product.vitesse;
-            System.out.println(product.getName() + "Timeleft après lancement" + product.timeleft);
 
         }
         List<PallierType> listeUnlock = product.getPalliers().getPallier();
@@ -207,7 +206,7 @@ public class Services {
         List<ProductType> ListProduit = world.getProducts().getProduct();
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
-        long delta = d1- d2;
+        long delta = d1 - d2;
         double angesActifs = world.getActiveangels();
         double angelBonus = world.getAngelbonus();
         //System.out.println("ancien score :" + world.getScore());
