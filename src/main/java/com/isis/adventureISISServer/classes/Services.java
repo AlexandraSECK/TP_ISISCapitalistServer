@@ -50,7 +50,7 @@ public class Services {
         }
         majWorld(world);
         world.setLastupdate(System.currentTimeMillis());
-
+        System.out.println(world.getMoney());
         saveWorldToXml(world, username);
         return world;
     }
