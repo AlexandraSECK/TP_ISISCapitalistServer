@@ -58,7 +58,7 @@ public class Webservice {
     @PUT
     @Path("product")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void putProduct(@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException {
+    public void putProduct(@Context HttpServletRequest request, ProductType product) throws JAXBException, FileNotFoundException, Exception {
         String username = request.getHeader("X-user");
         services.updateProduct(username, product);
     }

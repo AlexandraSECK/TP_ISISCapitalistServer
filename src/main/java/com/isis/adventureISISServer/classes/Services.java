@@ -108,7 +108,12 @@ public class Services {
         } else {
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
-            if(product.timeleft!=0) throw new Exception();
+            //En cas de décalage entre serveur et client
+            if(product.timeleft!=0) {
+                 world.setMoney(world.getMoney() + product.getRevenu());
+                    world.setScore(world.getScore() + product.getRevenu());
+                    product.setTimeleft(0);
+            }
   
             System.out.println(product.getName() + "Timeleft avant le lancement" + product.timeleft);
             product.timeleft = product.vitesse;
@@ -203,7 +208,6 @@ public class Services {
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
         long delta = d1- d2;
-        System.out.println("temps entre les deux : "+delta);
         double angesActifs = world.getActiveangels();
         double angelBonus = world.getAngelbonus();
         //System.out.println("ancien score :" + world.getScore());
@@ -221,7 +225,6 @@ public class Services {
                     world.setMoney(world.getMoney() + pr.getRevenu());
                     world.setScore(world.getScore() + pr.getRevenu());
                     pr.setTimeleft(0);
-                    System.out.println("nouveau produit");
                 } else {
                     if (pr.getTimeleft() != 0) {
                         long newTimeLeft = pr.getTimeleft() - delta;
