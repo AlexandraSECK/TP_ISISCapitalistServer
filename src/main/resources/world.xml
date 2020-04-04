@@ -16,7 +16,7 @@ and open the template in the editor.
     <totalangels>0</totalangels>
     <activeangels>0</activeangels>
     <angelbonus>0</angelbonus>
-    <lastupdate></lastupdate>
+    <lastupdate>0</lastupdate>
     <products>
         <product>
             <id>1</id>
@@ -731,7 +731,7 @@ and open the template in the editor.
         <pallier>
             <name>upgrade 10</name>
             <logo>barbamama.gif</logo>
-            <seuil>5000000000</seuil>
+            <seuil>500000000</seuil>
             <idcible>2</idcible>
             <ratio>1.2</ratio>
             <typeratio>vitesse</typeratio>
@@ -773,6 +773,8 @@ and open the template in the editor.
             <logo>barbapapa.gif</logo>
             <seuil>400</seuil>
             <idcible>1</idcible>
+            <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -780,13 +782,17 @@ and open the template in the editor.
             <logo>barbamama.gif</logo>
             <seuil>800</seuil>
             <idcible>2</idcible>
+            <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
             <name>Manager belle</name>
             <logo>barbabelle.gif</logo>
             <seuil>5000</seuil>
-            <idcible>3</idcible>
+            <idcible>3</idcible> 
+            <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -794,6 +800,8 @@ and open the template in the editor.
             <logo>barbalala.gif</logo>
             <seuil>10000</seuil>
             <idcible>4</idcible>
+             <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -801,13 +809,17 @@ and open the template in the editor.
             <logo>barbibul.gif</logo>
             <seuil>30000</seuil>
             <idcible>5</idcible>
+             <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
             <name>Manager Dou</name>
             <logo>barbidou.gif</logo>
             <seuil>40000</seuil>
-            <idcible>6</idcible>
+              <idcible>6</idcible>
+             <ratio>0</ratio>
+            <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         

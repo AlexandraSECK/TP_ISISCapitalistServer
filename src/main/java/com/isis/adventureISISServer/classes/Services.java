@@ -6,6 +6,7 @@
 package com.isis.adventureISISServer.classes;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -33,6 +34,7 @@ public class Services {
 
     }*/
     public World getWorld(String username) throws JAXBException, FileNotFoundException {
+        //System.out.println("ici");
         World world = readWorldFromXml(username);
         ProductType product = findProductById(world, 1);
 
@@ -50,21 +52,27 @@ public class Services {
         return world;
     }
 
-    public World readWorldFromXml(String username) throws JAXBException {
+    public World readWorldFromXml(String username) throws JAXBException, FileNotFoundException {
         String fileName = username + "-world.xml";
         JAXBContext cont = JAXBContext.newInstance(World.class);
         Unmarshaller u = cont.createUnmarshaller();
         World world;
         try {
             File worldFile = new File(fileName);
-            world = (World) u.unmarshal(worldFile);
+            InputStream targetStream = new FileInputStream(worldFile);
+            world = (World) u.unmarshal(targetStream);
+           System.out.println("ancien");
+           return world;
+
         } catch (Exception e) {
-            InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
+           InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
+            saveWorldToXml(world,username);
+            System.out.println(e);
             System.out.println("nouveau monde!");
+            return world;
         }
 
-        return world;
     }
 
     void saveWorldToXml(World world, String username) throws FileNotFoundException, JAXBException {
@@ -147,6 +155,7 @@ public class Services {
 // renvoie false si l’action n’a pas pu être traitée
     public Boolean updateManager(String username, PallierType newmanager) throws JAXBException, FileNotFoundException {
 // aller chercher le monde qui correspond au joueur*
+        System.out.println("ici");
         World world = getWorld(username);
         // trouver dans ce monde, le manager équivalent à celui passé
 // en paramètre
