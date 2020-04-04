@@ -40,17 +40,16 @@ public class Services {
         //System.out.println("ici");
         World world = readWorldFromXml(username);
         ProductType product = findProductById(world, 1);
-
         long d1 = System.currentTimeMillis();
         long d2 = world.getLastupdate();
 
         if (d1 == d2) {
-
             return world;
         }
         majWorld(world);
         world.setLastupdate(System.currentTimeMillis());
         System.out.println(world.getMoney());
+        System.out.println(d2-d1);
         saveWorldToXml(world, username);
         return world;
     }
@@ -124,8 +123,9 @@ public class Services {
 // pour lancer la production
             //En cas de décalage entre serveur et client
             if (product.timeleft != 0) {
-                world.setMoney(world.getMoney() + product.getRevenu());
-                world.setScore(world.getScore() + product.getRevenu());
+                double argentGagne = (product.getRevenu()) * (1 + world.getActiveangels() * world.getAngelbonus() / 100);
+                world.setMoney(world.getMoney() + argentGagne);
+                world.setScore(world.getScore() + argentGagne);
                 product.setTimeleft(0);
             }
 
@@ -226,18 +226,23 @@ public class Services {
         double angelBonus = world.getAngelbonus();
         //System.out.println("ancien score :" + world.getScore());
         for (ProductType pr : ListProduit) {
+            double argentGagne = pr.getRevenu()* (1 + angesActifs * angelBonus / 100);
             if (pr.isManagerUnlocked()) {
+                
+                //Set le temps restant
                 int tempsProduit = pr.getVitesse();
                 int nbrProduit = (int) (delta / tempsProduit);
-                long tpsRestant = nbrProduit - (delta % tempsProduit);
+                long tpsRestant = tempsProduit - (delta % tempsProduit);
                 pr.setTimeleft(tpsRestant);
-                double argentGagne = (pr.getRevenu() * nbrProduit) * (1 + angesActifs * angelBonus / 100);
+                
+                //set le score et money
+                argentGagne=argentGagne*nbrProduit;
                 world.setMoney(world.getMoney() + argentGagne);
                 world.setScore(world.getScore() + argentGagne);
             } else {
                 if (pr.getTimeleft() != 0 && delta > pr.getTimeleft()) {
-                    world.setMoney(world.getMoney() + pr.getRevenu());
-                    world.setScore(world.getScore() + pr.getRevenu());
+                    world.setMoney(world.getMoney() +argentGagne );
+                    world.setScore(world.getScore() + argentGagne);
                     pr.setTimeleft(0);
                 } else {
                     if (pr.getTimeleft() != 0) {

@@ -15,7 +15,7 @@ and open the template in the editor.
     <score>0</score>
     <totalangels>0</totalangels>
     <activeangels>0</activeangels>
-    <angelbonus>0</angelbonus>
+    <angelbonus>2</angelbonus>
     <lastupdate>0</lastupdate>
     <products>
         <product>
@@ -72,7 +72,7 @@ and open the template in the editor.
                     <seuil>300</seuil>
                     <idcible>1</idcible>
                     <ratio>4</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -122,7 +122,7 @@ and open the template in the editor.
                     <seuil>125</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
                 <pallier>
@@ -131,7 +131,7 @@ and open the template in the editor.
                     <seuil>150</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -190,7 +190,7 @@ and open the template in the editor.
                     <seuil>300</seuil>
                     <idcible>3</idcible>
                     <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -249,7 +249,7 @@ and open the template in the editor.
                     <seuil>300</seuil>
                     <idcible>4</idcible>
                     <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -308,7 +308,7 @@ and open the template in the editor.
                     <seuil>300</seuil>
                     <idcible>5</idcible>
                     <ratio>4</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -367,7 +367,7 @@ and open the template in the editor.
                     <seuil>300</seuil>
                     <idcible>6</idcible>
                     <ratio>4</ratio>
-                    <typeratio>ange</typeratio>
+                    <typeratio>gain</typeratio>
                     <unlocked>false</unlocked>
                 </pallier>
             </palliers>
@@ -416,7 +416,7 @@ and open the template in the editor.
             <seuil>300</seuil>
             <idcible>1</idcible>
             <ratio>4</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -452,7 +452,7 @@ and open the template in the editor.
             <seuil>125</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -461,7 +461,7 @@ and open the template in the editor.
             <seuil>150</seuil>
             <idcible>2</idcible>
             <ratio>2</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -506,7 +506,7 @@ and open the template in the editor.
             <seuil>300</seuil>
             <idcible>3</idcible>
             <ratio>2</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         
@@ -552,7 +552,7 @@ and open the template in the editor.
             <seuil>300</seuil>
             <idcible>4</idcible>
             <ratio>2</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -597,7 +597,7 @@ and open the template in the editor.
             <seuil>300</seuil>
             <idcible>5</idcible>
             <ratio>4</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -642,7 +642,7 @@ and open the template in the editor.
             <seuil>300</seuil>
             <idcible>6</idcible>
             <ratio>4</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>                          
     </allunlocks>
@@ -671,7 +671,7 @@ and open the template in the editor.
             <seuil>25000</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -689,7 +689,7 @@ and open the template in the editor.
             <seuil>150000</seuil>
             <idcible>2</idcible>
             <ratio>1.5</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -698,7 +698,7 @@ and open the template in the editor.
             <seuil>250000</seuil>
             <idcible>1</idcible>
             <ratio>1.5</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -707,7 +707,7 @@ and open the template in the editor.
             <seuil>1000000</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -721,11 +721,11 @@ and open the template in the editor.
         </pallier>
         <pallier>
             <name>upgrade 9</name>
-            <logo>babouille.gif</logo>
+            <logo>barbouille.gif</logo>
             <seuil>100000000</seuil>
             <idcible>0</idcible>
             <ratio>1.25</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
@@ -743,7 +743,7 @@ and open the template in the editor.
             <name>AngelUpgrade 1</name>
             <logo>barbotine.gif</logo>
             <seuil>10000</seuil>
-            <idcible>0</idcible>
+            <idcible>-1</idcible>
             <ratio>3</ratio>
             <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
@@ -771,7 +771,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager papa</name>
             <logo>barbapapa.gif</logo>
-            <seuil>400</seuil>
+            <seuil>1000</seuil>
             <idcible>1</idcible>
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
@@ -780,7 +780,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager mama</name>
             <logo>barbamama.gif</logo>
-            <seuil>800</seuil>
+            <seuil>15000</seuil>
             <idcible>2</idcible>
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
@@ -789,7 +789,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager belle</name>
             <logo>barbabelle.gif</logo>
-            <seuil>5000</seuil>
+            <seuil>100000</seuil>
             <idcible>3</idcible> 
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
@@ -819,7 +819,7 @@ and open the template in the editor.
             <seuil>40000</seuil>
               <idcible>6</idcible>
              <ratio>0</ratio>
-            <typeratio>ange</typeratio>
+            <typeratio>ange</typeratio> 
             <unlocked>false</unlocked>
         </pallier>
         
