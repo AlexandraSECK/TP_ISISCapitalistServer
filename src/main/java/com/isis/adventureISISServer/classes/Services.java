@@ -75,9 +75,11 @@ public class Services {
         m.marshal(world, output);
     }
 
-    public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException {
+    public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException, Exception {
 // aller chercher le monde qui correspond au joueur
         World world = getWorld(username);
+                world.setLastupdate(System.currentTimeMillis());
+
         //majWorld(world);
 // trouver dans ce monde, le produit équivalent à celui passé
 // en paramètre
@@ -106,9 +108,11 @@ public class Services {
         } else {
 // initialiser product.timeleft à product.vitesse
 // pour lancer la production
+            if(product.timeleft!=0) throw new Exception();
+  
             System.out.println(product.getName() + "Timeleft avant le lancement" + product.timeleft);
             product.timeleft = product.vitesse;
-                        System.out.println(product.getName() + "Timeleft après lancement" + product.timeleft);
+            System.out.println(product.getName() + "Timeleft après lancement" + product.timeleft);
 
         }
         List<PallierType> listeUnlock = product.getPalliers().getPallier();
@@ -118,7 +122,6 @@ public class Services {
             }
         }
 // sauvegarder les changements du monde
-        world.setLastupdate(System.currentTimeMillis());
         saveWorldToXml(world, username);
         return true;
     }
