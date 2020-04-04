@@ -24,6 +24,9 @@ import javax.xml.bind.Unmarshaller;
  */
 public class Services {
 
+    int test = 0;
+
+
     /* public void updateScore(String username, World world) throws JAXBException, FileNotFoundException{
         World oldWorld = readWorldFromXml(username);
         double money=world.getMoney();
@@ -60,14 +63,16 @@ public class Services {
         try {
             File worldFile = new File(fileName);
             InputStream targetStream = new FileInputStream(worldFile);
+            System.out.println("debut");
             world = (World) u.unmarshal(targetStream);
-           System.out.println("ancien");
-           return world;
+            System.out.println("fin");
+            //System.out.println("ancien");
+            return world;
 
         } catch (Exception e) {
-           InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
+            InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
-            saveWorldToXml(world,username);
+            saveWorldToXml(world, username);
             System.out.println(e);
             System.out.println("nouveau monde!");
             return world;
@@ -174,8 +179,9 @@ public class Services {
 // sauvegarder les changements au monde
         product.setManagerUnlocked(true);
         double argent = world.getMoney() - manager.getSeuil();
+                world.setMoney(argent);
+
         saveWorldToXml(world, username);
-        world.setMoney(argent);
 
         return true;
     }
