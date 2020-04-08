@@ -48,8 +48,11 @@ public class Services {
         }
         majWorld(world);
         world.setLastupdate(System.currentTimeMillis());
-        System.out.println(world.getMoney());
-        System.out.println(d2-d1);
+        System.out.println("Money"+world.getMoney());
+                System.out.println("Score"+world.getScore());
+                System.out.println("nbAnge"+nbAnges(world));
+
+        //System.out.println(d2-d1);
         saveWorldToXml(world, username);
         return world;
     }
@@ -62,9 +65,9 @@ public class Services {
         try {
             File worldFile = new File(fileName);
             InputStream targetStream = new FileInputStream(worldFile);
-            System.out.println("debut");
+           // System.out.println("debut");
             world = (World) u.unmarshal(targetStream);
-            System.out.println("fin");
+            //System.out.println("fin");
             //System.out.println("ancien");
             return world;
 
@@ -124,6 +127,7 @@ public class Services {
             //En cas de décalage entre serveur et client
             if (product.timeleft != 0) {
                 double argentGagne = (product.getRevenu()) * (1 + world.getActiveangels() * world.getAngelbonus() / 100);
+                System.out.println(argentGagne);
                 world.setMoney(world.getMoney() + argentGagne);
                 world.setScore(world.getScore() + argentGagne);
                 product.setTimeleft(0);
@@ -160,7 +164,6 @@ public class Services {
 // renvoie false si l’action n’a pas pu être traitée
     public Boolean updateManager(String username, PallierType newmanager) throws JAXBException, FileNotFoundException {
 // aller chercher le monde qui correspond au joueur*
-        System.out.println("ici");
         World world = getWorld(username);
         // trouver dans ce monde, le manager équivalent à celui passé
 // en paramètre
@@ -226,7 +229,7 @@ public class Services {
         double angelBonus = world.getAngelbonus();
         //System.out.println("ancien score :" + world.getScore());
         for (ProductType pr : ListProduit) {
-            double argentGagne = pr.getRevenu()* (1 + angesActifs * angelBonus / 100);
+            double argentGagne = pr.getRevenu()* (1 + (angesActifs * angelBonus / 100));
             if (pr.isManagerUnlocked()) {
                 
                 //Set le temps restant
@@ -244,6 +247,8 @@ public class Services {
                     world.setMoney(world.getMoney() +argentGagne );
                     world.setScore(world.getScore() + argentGagne);
                     pr.setTimeleft(0);
+                    System.out.println("AregentGagne"+argentGagne)  ;
+                    System.out.println("Revenu :"+pr.getRevenu());
                 } else {
                     if (pr.getTimeleft() != 0) {
                         long newTimeLeft = pr.getTimeleft() - delta;
@@ -261,7 +266,7 @@ public class Services {
         p.setUnlocked(true);
         if (p.getTyperatio() == TyperatioType.VITESSE) {
             double v = product.getVitesse();
-            int newv = (int) (v * p.getRatio());
+            int newv = (int) (v / p.getRatio());
             product.setVitesse(newv);
 
         } else {
@@ -281,6 +286,8 @@ public class Services {
         double Score = world.getScore();
         activesAngels += angesGagnes;
         totalAngels += angesGagnes;
+        //System.out.println(Score);
+        //System.out.println(angesGagnes);
 
         InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
 
@@ -288,7 +295,7 @@ public class Services {
         Unmarshaller u = cont.createUnmarshaller();
         World NewWorld = (World) u.unmarshal(input);
         NewWorld.setTotalangels(totalAngels);
-        NewWorld.setActiveangels(angesGagnes);
+        NewWorld.setActiveangels(activesAngels);
         NewWorld.setScore(Score);
         saveWorldToXml(NewWorld, username);
         return NewWorld;
@@ -297,7 +304,12 @@ public class Services {
     public double nbAnges(World world) {
         double angelToClaim = world.getTotalangels();
         double score = world.getScore();
-        angelToClaim = Math.round(150 * Math.sqrt(score / Math.pow(10, 15))) - angelToClaim;
+        System.out.println("money : "+ world.money);
+        System.out.println("score : "+world.getScore());
+        System.out.println("Ange : "+world.getTotalangels());
+        
+        angelToClaim = 150 * Math.sqrt(score / Math.pow(10, 15)) - angelToClaim;
+        System.out.println("Ange gagnés"+angelToClaim);
         return angelToClaim;
     }
 
