@@ -33,7 +33,12 @@ public class Webservice {
         services = new Services();
     }
 
-    
+    /* @GET  
+    @Path("world")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response getWorld() throws JAXBException {
+        return Response.ok(services.readWorldFromXml()).build();
+    }*/
     @GET
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})

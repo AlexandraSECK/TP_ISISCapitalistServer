@@ -547,7 +547,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager belle</name>
             <logo>barbabelle.gif</logo>
-            <seuil>100000</seuil>
+            <seuil>20000</seuil>
             <idcible>3</idcible> 
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
@@ -556,7 +556,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager Lala</name>
             <logo>barbalala.gif</logo>
-            <seuil>10000</seuil>
+            <seuil>25000</seuil>
             <idcible>4</idcible>
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
@@ -565,7 +565,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager Bul</name>
             <logo>barbibul.gif</logo>
-            <seuil>30000</seuil>
+            <seuil>50000</seuil>
             <idcible>5</idcible>
             <ratio>0</ratio>
             <typeratio>ange</typeratio>
