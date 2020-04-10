@@ -574,7 +574,7 @@ and open the template in the editor.
         <pallier>
             <name>Manager Dou</name>
             <logo>barbidou.gif</logo>
-            <seuil>40000</seuil>
+            <seuil>60000</seuil>
             <idcible>6</idcible>
             <ratio>0</ratio>
             <typeratio>ange</typeratio> 
