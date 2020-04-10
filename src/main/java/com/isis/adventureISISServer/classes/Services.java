@@ -160,9 +160,10 @@ public class Services {
     }
 
     // Si une Amélioration est acheté
-    public Boolean updateUpgrade(String username, PallierType upgrade) throws JAXBException, FileNotFoundException {
+    public Boolean updateUpgrade(String username, PallierType upgrade1) throws JAXBException, FileNotFoundException {
         // Cherche le monde qui correspond au joueur
         World world = getWorld(username);
+        PallierType upgrade=findUpgrade(world,upgrade1.getName());
         //Si le joueur a assez d'argent et que l'amélioration n'a pas déjà été débloquée
         if (world.getMoney() >= upgrade.getSeuil() && !upgrade.isUnlocked()) {
             //Si jamais id cible=0 alors l'amélioration concerne tous les produits
@@ -171,11 +172,16 @@ public class Services {
                 for (ProductType p : listeProduits) {
                     majPallier(upgrade, p);
                 }
+                saveWorldToXml(world, username);
                 return true;
             } else {
                 //Sinon on récupère l'id du produit et on lui applique le pallier
                 ProductType p = findProductById(world, upgrade.getIdcible());
                 majPallier(upgrade, p);
+                
+                System.out.println(upgrade.isUnlocked());
+                saveWorldToXml(world, username);
+
                 return true;
             }
         }
@@ -194,6 +200,32 @@ public class Services {
             }
         }
         return manager;
+    }
+    //Chercher l'upgrade
+    private PallierType findUpgrade(World world, String name) {
+        PallierType upgrade = null;
+        List<PallierType> p = world.getUpgrades().getPallier();
+        for (PallierType pa : p) {
+            String mName = pa.getName();
+            if (name.equals(mName)) {
+                upgrade = pa;
+                return upgrade;
+            }
+        }
+        return upgrade;
+    }
+   //Chercher l'angelupgrade 
+    private PallierType findAngelUpgrade(World world, String name) {
+        PallierType angelUpgrade = null;
+        List<PallierType> p = world.getAngelupgrades().getPallier();
+        for (PallierType pa : p) {
+            String mName = pa.getName();
+            if (name.equals(mName)) {
+                angelUpgrade = pa;
+                return angelUpgrade;
+            }
+        }
+        return angelUpgrade;
     }
 
     //Mise à jour du monde 
@@ -238,12 +270,15 @@ public class Services {
         }
     }
 
-   //Prise en compte des palliers
+    //Prise en compte des palliers
     public void majPallier(PallierType p, ProductType product) {
         p.setUnlocked(true);
+        System.out.println("Pallier"+p.isUnlocked());
         //Si c'est une vitesse, reduit le vitesse en fonction du ratio
         if (p.getTyperatio() == TyperatioType.VITESSE) {
             double v = product.getVitesse();
+            System.out.println("Vitesse:"+v);
+            System.out.println("Ratio:"+p.getRatio());
             int newv = (int) (v / p.getRatio());
             product.setVitesse(newv);
 
@@ -268,7 +303,7 @@ public class Services {
         //Ajoute les anges aux anges actifs et au total
         activesAngels += angesGagnes;
         totalAngels += angesGagnes;
-    
+
         //Récupère un nouveau monde
         InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
         JAXBContext cont = JAXBContext.newInstance(World.class);
@@ -279,37 +314,37 @@ public class Services {
         NewWorld.setActiveangels(activesAngels);
         NewWorld.setScore(Score);
         //Sauvegarde le nouveau monde
-        System.out.println("Money:"+NewWorld.getMoney());
-        saveWorldToXml(NewWorld,username);
+        System.out.println("Money:" + NewWorld.getMoney());
+        saveWorldToXml(NewWorld, username);
         return NewWorld;
     }
 
-    
     //Calcule les anges gagnés
     public double nbAnges(World world) {
         double angelToClaim = world.getTotalangels();
         double score = world.getScore();
         //Formule modifiée pour gagner des anges plus vite ( plus facile pour les tests
-        angelToClaim = Math.round(150 * Math.sqrt(score / Math.pow(10, 7))) - angelToClaim;
+        angelToClaim = Math.round(150 * Math.sqrt(score / Math.pow(10, 9))) - angelToClaim;
         System.out.println("Ange gagnés" + angelToClaim);
         return angelToClaim;
     }
 
-   //Prise en compte des angels upgrade 
-    public void angelUpgrade(String username, PallierType angelUpgrade) throws JAXBException, FileNotFoundException {
-   //Récupère le monde du joueyr
+    //Prise en compte des angels upgrade 
+    public void angelUpgrade(String username, PallierType angelUpgrade1) throws JAXBException, FileNotFoundException {
+        //Récupère le monde du joueyr
         World world = getWorld(username);
+        PallierType angelUpgrade=findAngelUpgrade(world, username);
         double prix = angelUpgrade.getSeuil();
         double angesActif = world.getActiveangels();
         //Enleve aux anges actif le cout 
         angesActif -= prix;
-        
+
         //Si c'est un type ange modifie le bonus
         if (angelUpgrade.getTyperatio() == TyperatioType.ANGE) {
             int bonus = world.getAngelbonus();
             bonus += angelUpgrade.getRatio();
             world.setAngelbonus(bonus);
-
+            angelUpgrade.setUnlocked(true);
         } else {
             //S c'est un type vitesse ou gain
             updateUpgrade(username, angelUpgrade);
@@ -317,4 +352,5 @@ public class Services {
         world.setActiveangels(angesActif);
         saveWorldToXml(world, username);
     }
+    
 }

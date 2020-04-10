@@ -499,7 +499,7 @@ and open the template in the editor.
         <pallier>
             <name>AngelUpgrade 1</name>
             <logo>barbotine.gif</logo>
-            <seuil>2</seuil>
+            <seuil>500</seuil>
             <idcible>-1</idcible>
             <ratio>3</ratio>
             <typeratio>ange</typeratio>
@@ -508,7 +508,7 @@ and open the template in the editor.
         <pallier>
             <name>AngelUpgrade 2</name>
             <logo>barbotine.gif</logo>
-            <seuil>100000</seuil>
+            <seuil>200</seuil>
             <idcible>-1</idcible>
             <ratio>2</ratio>
             <typeratio>ange</typeratio>
@@ -517,7 +517,7 @@ and open the template in the editor.
         <pallier>
             <name>AngelUpgrade 3</name>
             <logo>barbotine.gif</logo>
-            <seuil>100000000</seuil>
+            <seuil>10000</seuil>
             <idcible>-1</idcible>
             <ratio>2</ratio>
             <typeratio>ange</typeratio>

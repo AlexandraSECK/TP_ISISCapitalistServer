@@ -33,7 +33,7 @@ public class Webservice {
         services = new Services();
     }
 
-   
+    
     @GET
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -73,7 +73,6 @@ public class Webservice {
     @DELETE
     @Path("world")
     public void deleteWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
-        //Supprime le monde
         String username = request.getHeader("X-user");
         services.deleteWorld(username);
 
