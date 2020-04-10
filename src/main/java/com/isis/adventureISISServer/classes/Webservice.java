@@ -33,12 +33,7 @@ public class Webservice {
         services = new Services();
     }
 
-    /* @GET  
-    @Path("world")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response getWorld() throws JAXBException {
-        return Response.ok(services.readWorldFromXml()).build();
-    }*/
+   
     @GET
     @Path("world")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -78,6 +73,7 @@ public class Webservice {
     @DELETE
     @Path("world")
     public void deleteWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
+        //Supprime le monde
         String username = request.getHeader("X-user");
         services.deleteWorld(username);
 
@@ -88,7 +84,6 @@ public class Webservice {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putAngelUpgrade(@Context HttpServletRequest request, PallierType angelUpgrade) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
-        System.out.print("angelUpdgrade");
         services.angelUpgrade(username, angelUpgrade);
     }
 }

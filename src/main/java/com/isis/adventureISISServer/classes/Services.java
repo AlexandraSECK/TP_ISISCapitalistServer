@@ -279,6 +279,8 @@ public class Services {
         NewWorld.setActiveangels(activesAngels);
         NewWorld.setScore(Score);
         //Sauvegarde le nouveau monde
+        System.out.println("Money:"+NewWorld.getMoney());
+        saveWorldToXml(NewWorld,username);
         return NewWorld;
     }
 
@@ -287,6 +289,7 @@ public class Services {
     public double nbAnges(World world) {
         double angelToClaim = world.getTotalangels();
         double score = world.getScore();
+        //Formule modifiée pour gagner des anges plus vite ( plus facile pour les tests
         angelToClaim = Math.round(150 * Math.sqrt(score / Math.pow(10, 7))) - angelToClaim;
         System.out.println("Ange gagnés" + angelToClaim);
         return angelToClaim;
