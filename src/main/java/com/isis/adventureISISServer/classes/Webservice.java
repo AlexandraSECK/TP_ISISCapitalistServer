@@ -44,16 +44,12 @@ public class Webservice {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getXml(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
-        return Response.ok(services.getWorld(username)).build();
+        System.out.println("username:" + username);
+        World world = services.getWorld(username);
+        services.saveWorldToXml(world, username);
+    return Response.ok(world).build();   
     }
-    
-   /* @PUT
-    @Path("world")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void putProduct(@Context HttpServletRequest request, World world) throws JAXBException, FileNotFoundException {
-        String username = request.getHeader("X-user");
-        services.updateScore(username, world);
-    }*/
+ 
 
     @PUT
     @Path("product")

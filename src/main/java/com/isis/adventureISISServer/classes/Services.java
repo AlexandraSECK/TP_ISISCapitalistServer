@@ -247,8 +247,7 @@ public class Services {
                     world.setMoney(world.getMoney() +argentGagne );
                     world.setScore(world.getScore() + argentGagne);
                     pr.setTimeleft(0);
-                    System.out.println("AregentGagne"+argentGagne)  ;
-                    System.out.println("Revenu :"+pr.getRevenu());
+                    
                 } else {
                     if (pr.getTimeleft() != 0) {
                         long newTimeLeft = pr.getTimeleft() - delta;
