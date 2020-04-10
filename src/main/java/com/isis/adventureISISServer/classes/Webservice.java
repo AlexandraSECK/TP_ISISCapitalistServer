@@ -88,6 +88,7 @@ public class Webservice {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putAngelUpgrade(@Context HttpServletRequest request, PallierType angelUpgrade) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-user");
+        System.out.print("angelUpdgrade");
         services.angelUpgrade(username, angelUpgrade);
     }
 }

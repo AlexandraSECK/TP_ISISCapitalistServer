@@ -24,7 +24,7 @@ and open the template in the editor.
             <logo>barbapapa.gif</logo>
             <cout>4</cout>
             <croissance>1.07</croissance>
-            <revenu>1000000000</revenu>
+            <revenu>1</revenu>
             <vitesse>500</vitesse>
             <quantite>1</quantite>
             <timeleft>0</timeleft>
@@ -375,276 +375,33 @@ and open the template in the editor.
     </products>
     <allunlocks>
         <pallier>
-            <name>PapaUnlock 1</name>
-            <logo>barbapapa.gif</logo>
+            <name>Every Barbunlock 1</name>
+            <logo>lolita.gif</logo>
             <seuil>25</seuil>
-            <idcible>1</idcible>
+            <idcible>0</idcible>
             <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
+            <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name>PapaUnlock 2</name>
-            <logo>barbapapa.gif</logo>
-            <seuil>50</seuil>
-            <idcible>1</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>PapaUnlock 3</name>
-            <logo>barbapapa.gif</logo>
+            <name>Every Barbunlock 2</name>
+            <logo>lolita.gif</logo>
             <seuil>100</seuil>
-            <idcible>1</idcible>
+            <idcible>0</idcible>
             <ratio>2</ratio>
             <typeratio>vitesse</typeratio>
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name>PapaUnlock 4</name>
-            <logo>barbapapa.gif</logo>
+            <name>Every Barbunlock 3</name>
+            <logo>lolita.gif</logo>
             <seuil>200</seuil>
-            <idcible>1</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>PapaUnlock 5</name>
-            <logo>barbapapa.gif</logo>
-            <seuil>300</seuil>
-            <idcible>1</idcible>
-            <ratio>4</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>MamaUnlock 1</name>
-            <logo>barbamama.gif</logo>
-            <seuil>25</seuil>
-            <idcible>2</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>MamaUnlock 2</name>
-            <logo>barbamama.gif</logo>
-            <seuil>50</seuil>
-            <idcible>2</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>MamaUnlock 3</name>
-            <logo>barbamama.gif</logo>
-            <seuil>100</seuil>
-            <idcible>2</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>MamaUnlock 4</name>
-            <logo>barbamama.gif</logo>
-            <seuil>125</seuil>
-            <idcible>1</idcible>
+            <idcible>0</idcible>
             <ratio>2</ratio>
             <typeratio>gain</typeratio>
             <unlocked>false</unlocked>
         </pallier>
-        <pallier>
-            <name>MamaUnlock 5</name>
-            <logo>barbamama.gif</logo>
-            <seuil>150</seuil>
-            <idcible>2</idcible>
-            <ratio>2</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BelleUnlock 1</name>
-            <logo>barbabelle.gif</logo>
-            <seuil>25</seuil>
-            <idcible>3</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BelleUnlock 2</name>
-            <logo>barbabelle.gif</logo>
-            <seuil>50</seuil>
-            <idcible>3</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BelleUnlock 3</name>
-            <logo>barbabelle.gif</logo>
-            <seuil>100</seuil>
-            <idcible>3</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BelleUnlock 4</name>
-            <logo>barbabelle.gif</logo>
-            <seuil>200</seuil>
-            <idcible>3</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BelleUnlock 5</name>
-            <logo>barbabelle.gif</logo>
-            <seuil>300</seuil>
-            <idcible>3</idcible>
-            <ratio>2</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        
-        <pallier>
-            <name>LalaUnlock 1</name>
-            <logo>barbalala.gif</logo>
-            <seuil>25</seuil>
-            <idcible>4</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>LalaUnlock 2</name>
-            <logo>barbalala.gif</logo>
-            <seuil>50</seuil>
-            <idcible>4</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>LalaUnlock 3</name>
-            <logo>barbalala.gif</logo>
-            <seuil>100</seuil>
-            <idcible>4</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>LalaUnlock 4</name>
-            <logo>barbalala.gif</logo>
-            <seuil>200</seuil>
-            <idcible>4</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>LalaUnlock 5</name>
-            <logo>barbalala.gif</logo>
-            <seuil>300</seuil>
-            <idcible>4</idcible>
-            <ratio>2</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BulUnlock 1</name>
-            <logo>barbibul.gif</logo>
-            <seuil>25</seuil>
-            <idcible>5</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BulUnlock 2</name>
-            <logo>barbibul.gif</logo>
-            <seuil>50</seuil>
-            <idcible>5</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BulUnlock 3</name>
-            <logo>barbibul.gif</logo>
-            <seuil>100</seuil>
-            <idcible>5</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BulUnlock 4</name>
-            <logo>barbibul.gif</logo>
-            <seuil>200</seuil>
-            <idcible>5</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>BulUnlock 5</name>
-            <logo>barbibul.gif</logo>
-            <seuil>300</seuil>
-            <idcible>5</idcible>
-            <ratio>4</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>DouUnlock 1</name>
-            <logo>barbidou.gif</logo>
-            <seuil>25</seuil>
-            <idcible>6</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>DouUnlock 2</name>
-            <logo>barbidou.gif</logo>
-            <seuil>50</seuil>
-            <idcible>6</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>DouUnlock 3</name>
-            <logo>barbidou.gif</logo>
-            <seuil>100</seuil>
-            <idcible>6</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>DouUnlock 4</name>
-            <logo>barbidou.gif</logo>
-            <seuil>200</seuil>
-            <idcible>6</idcible>
-            <ratio>2</ratio>
-            <typeratio>vitesse</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-            <name>DouUnlock 5</name>
-            <logo>barbidou.gif</logo>
-            <seuil>300</seuil>
-            <idcible>6</idcible>
-            <ratio>4</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>false</unlocked>
-        </pallier>                          
+                                
     </allunlocks>
     <upgrades>
         <pallier>
@@ -742,7 +499,7 @@ and open the template in the editor.
         <pallier>
             <name>AngelUpgrade 1</name>
             <logo>barbotine.gif</logo>
-            <seuil>10000</seuil>
+            <seuil>2</seuil>
             <idcible>-1</idcible>
             <ratio>3</ratio>
             <typeratio>ange</typeratio>
@@ -768,6 +525,7 @@ and open the template in the editor.
         </pallier>
     </angelupgrades>
     <managers>
+        <!--Manager type ratio au hasard car pas necessaire-->
         <pallier>
             <name>Manager papa</name>
             <logo>barbapapa.gif</logo>
@@ -800,7 +558,7 @@ and open the template in the editor.
             <logo>barbalala.gif</logo>
             <seuil>10000</seuil>
             <idcible>4</idcible>
-             <ratio>0</ratio>
+            <ratio>0</ratio>
             <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
@@ -809,7 +567,7 @@ and open the template in the editor.
             <logo>barbibul.gif</logo>
             <seuil>30000</seuil>
             <idcible>5</idcible>
-             <ratio>0</ratio>
+            <ratio>0</ratio>
             <typeratio>ange</typeratio>
             <unlocked>false</unlocked>
         </pallier>
@@ -817,8 +575,8 @@ and open the template in the editor.
             <name>Manager Dou</name>
             <logo>barbidou.gif</logo>
             <seuil>40000</seuil>
-              <idcible>6</idcible>
-             <ratio>0</ratio>
+            <idcible>6</idcible>
+            <ratio>0</ratio>
             <typeratio>ange</typeratio> 
             <unlocked>false</unlocked>
         </pallier>
